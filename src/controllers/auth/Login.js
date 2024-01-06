@@ -43,7 +43,7 @@ const Login = async (req, res) => {
     } else {
       return res
         .status(201)
-        .json({ statusCode: 400, msg: "The User is not exists." });
+        .json({ statusCode: 400, msg: "Invalid Email Id." });
     }
   } catch (error) {
     console.log(error);
