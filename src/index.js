@@ -32,7 +32,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res..send("Hello! Welcome to Entertainment app.");
+  res..send("Hello! Welcome to EntertainmentHub.");
 });
 
 app.use("/api/user", userRouter);
