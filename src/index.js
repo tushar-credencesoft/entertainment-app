@@ -31,6 +31,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res..send("Hello! Welcome to EntertainmentHub.");
+});
+
 app.use("/api/user", userRouter);
 
 app.get("/", (req, res) => {
