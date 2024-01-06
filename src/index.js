@@ -33,6 +33,10 @@ app.use(
 
 app.use("/api/user", userRouter);
 
+app.get("/", (req, res) => {
+   res.send("Hello!");
+});
+
 app.listen(process.env.PORT, () => {
   console.log("Entertainment Server is runnong on PORT", process.env.PORT);
 });
