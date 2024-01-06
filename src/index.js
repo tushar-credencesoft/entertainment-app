@@ -31,6 +31,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello! Welcome to Entertainment app.");
+});
+
 app.use("/api/user", userRouter);
 
 app.listen(process.env.PORT, () => {
