@@ -2,7 +2,7 @@
 const Logout = (req, res) => {
   try {
     // cleraing the token from cookie
-    res.clearCookie("entertainment_app_token",  { domain: 'entertainment-app-server.onrender.com', path: '/api/user/logout', secure: true });
+    res.clearCookie("entertainment_app_token",  { domain: 'entertainment-app-server.onrender.com', secure: true });
     return res
       .status(200)
       .json({
