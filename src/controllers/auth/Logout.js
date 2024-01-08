@@ -1,8 +1,8 @@
 // Logout
-const Logout = async (req, res) => {
+const Logout = (req, res) => {
   try {
     // cleraing the token from cookie
-    await res.clearCookie("entertainment_app_token",  { secure: true });
+    res.clearCookie("entertainment_app_token",  { secure: true });
     return res
       .status(200)
       .json({
