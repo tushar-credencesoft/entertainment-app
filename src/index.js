@@ -33,7 +33,7 @@ app.use(
 
 // Just for checking the server is running or not
 app.get("/", (req, res) => {
-  res.send("Hello! Welcome to EntertainmentHub.");
+  res.status(200).send({msg: "Hello! Welcome to EntertainmentHub."});
 });
 
 app.use("/api/user", userRouter);
