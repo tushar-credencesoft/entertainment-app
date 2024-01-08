@@ -30,7 +30,7 @@ const checkUserExistance = async (req, res, next) => {
 router
   .post("/signup", checkUserExistance, SignUp)
   .post("/login", Login)
-  .post("/logout", Logout)
+  .get("/logout", Logout)
   .get("/verify-user", VerifyUser)
   .post("/bookmark-movie", BookmarkMovie)
   .get("/get-all-bookmarks/:email", GetAllBookmarks)
