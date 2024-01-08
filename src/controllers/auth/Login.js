@@ -27,10 +27,10 @@ const Login = async (req, res) => {
               expiresIn: "1d",
             });
             // setting up the cookie
-            res.cookie("entertainment_app_token", token);
+            res.cookie("entertainment_app_token", token, { sameSite: 'None', secure: true });
             res
               .status(200)
-              .json({ statusCode: 200, msg: "User LoggedIn Successfully" });
+              .json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully" });
           } else {
             return res
               .status(201)
