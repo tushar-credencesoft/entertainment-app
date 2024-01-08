@@ -27,9 +27,7 @@ const Login = async (req, res) => {
               expiresIn: "1d",
             });
             // setting up the cookie
-            res.cookie("entertainment_app_token", token, {
-              httpOnly: true,
-            });
+            res.cookie("entertainment_app_token", token);
             res
               .status(200)
               .json({ statusCode: 200, msg: "User LoggedIn Successfully" });
