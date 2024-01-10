@@ -5,9 +5,9 @@ const Logout = (req, res) => {
     // { domain: 'entertainment-app-server.onrender.com', secure: true }
     res.clearCookie("entertainment_app_token", {
       httpOnly: true,
-      // path: '/api/user/logout/',
+      path: '/api/user/logout/',
       sameSite: 'Lax', // or 'Lax'
-      // domain: 'entertainment-app-server.onrender.com',
+      domain: 'entertainment-app-server.onrender.com',
       secure: true
     });
     return res
