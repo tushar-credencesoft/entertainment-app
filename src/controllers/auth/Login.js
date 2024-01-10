@@ -34,10 +34,10 @@ const Login = async (req, res) => {
             const options = {
               expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
               httpOnly: true,
-              domain: 'entertainment-app-server.onrender.com',
-              secure: true,
-              sameSite: 'None',
-              secure: true
+      path: '/api/user/logout/',
+      sameSite: 'None',
+      domain: 'entertainment-app-server.onrender.com',
+      secure: true
             }
             // // { sameSite: 'None', secure: true }
             res.status(200).cookie("entertainment_app_token", token, options).json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully..." });
