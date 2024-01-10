@@ -9,7 +9,7 @@ const UserLogout = ({ setShowUserDetails }) => {
     <p
       onClick={async () => {
         await fetch("https://entertainment-app-server.onrender.com/api/user/logout", {
-          method: "POST",
+          method: "GET",
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
           credentials: "include",

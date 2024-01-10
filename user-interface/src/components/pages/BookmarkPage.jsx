@@ -16,10 +16,11 @@ const BookmarkPage = () => {
   const [bookmarkedContents, setBookmarkedContents] = useState({});
   const GetBookmarkedMovies = async () => {
     const email = JSON.parse(localStorage.getItem("userEmail"));
-    await fetch(`https://entertainment-app-server.onrender.com/api/user/get-all-bookmarks/${email}`)
+    await fetch(
+      `https://entertainment-app-server.onrender.com/api/user/get-all-bookmarks/${email}`
+    )
       .then((res) => res.json())
       .then((movie) => {
-        console.log("asdfghjk",movie);
         setBookmarkedContents(movie.data);
       });
   };
@@ -66,7 +67,9 @@ const BookmarkPage = () => {
       // Search bookmarks for Movies
       if (searchedContentType === "movie") {
         bookmarkedContents.bookmarkedMovies.map((movie) => {
-          if (movie.title.toLowerCase().startsWith(searchedValue.toLowerCase())) {
+          if (
+            movie.title.toLowerCase().startsWith(searchedValue.toLowerCase())
+          ) {
             return setSearchedMovieList((prev) => [...prev, movie]);
           }
           return null;
@@ -76,7 +79,11 @@ const BookmarkPage = () => {
       // Search bookmarks for TV series
       if (searchedContentType === "tv_series") {
         bookmarkedContents.bookmarkedTvSeries.map((movie) => {
-          if (movie.original_name.toLowerCase().startsWith(searchedValue.toLowerCase())) {
+          if (
+            movie.original_name
+              .toLowerCase()
+              .startsWith(searchedValue.toLowerCase())
+          ) {
             return setSearchedMovieList((prev) => [...prev, movie]);
           }
           return null;
@@ -138,7 +145,7 @@ const BookmarkPage = () => {
         )}
       </div>
       {!openSearchResult && (
-        <div className="absolute text-white mt-4 max-md:mt-2 pr-6 max-lg:pb-6 max-sm:pr-2 h-5/6 overflow-y-scroll scrollbar-hide overflow-x-hidden">
+        <div className="text-white mt-4 max-md:mt-2 pr-6 max-lg:pb-6 max-sm:pr-2 h-5/6">
           <div className="">
             <p className="text-2xl max-sm:text">Bookmarked Movies</p>
             {bookmarkedContents.bookmarkedMovies?.length === 0 && (

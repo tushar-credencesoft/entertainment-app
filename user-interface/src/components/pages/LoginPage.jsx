@@ -61,7 +61,6 @@ const LoginPage = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("token dtaa", data)
           setIsLoading((prev) => !prev);
           if (data.statusCode === 200) {
             toast.success(data.msg);
