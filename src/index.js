@@ -5,7 +5,6 @@ const userRouter = require("./routes/userRouter");
 const DatabaseConnector = require("./db-connection");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const path = require("path");
 
 // DB connection
 DatabaseConnector().catch((err) => console.log(err));

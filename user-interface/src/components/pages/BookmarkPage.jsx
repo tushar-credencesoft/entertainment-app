@@ -94,7 +94,7 @@ const BookmarkPage = () => {
   }, [searchedValue]);
 
   return (
-    <div className="max-md:mx-2">
+    <div className="max-md:mx-2 max-sm:pb-2 pb-6">
       <div>
         <div className="lg:mt-1 flex max-lg:flex-col lg:items-center">
           <div className="flex items-center">

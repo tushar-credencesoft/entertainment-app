@@ -26,14 +26,30 @@ const Login = async (req, res) => {
             const token = jwt.sign({ email: userEmail }, process.env.JWT_KEY, {
               expiresIn: "2h",
             });
+<<<<<<< Updated upstream
           
             // Cookie options
+=======
+>>>>>>> Stashed changes
             const options = {
               httpOnly: true,
               sameSite: "None",
               secure: true,
+<<<<<<< Updated upstream
             }
             res.status(200).cookie("entertainment_app_token", token, options).json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully..." });
+=======
+            };
+            // // { sameSite: 'None', secure: true }
+            res
+              .status(200)
+              .cookie("entertainment_app_token", token, options)
+              .json({
+                statusCode: 200,
+                data: { entertainment_app_token: token },
+                msg: "User LoggedIn Successfully...",
+              });
+>>>>>>> Stashed changes
           } else {
             return res
               .status(201)
