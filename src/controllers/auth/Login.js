@@ -26,11 +26,11 @@ const Login = async (req, res) => {
             const token = jwt.sign({ email: userEmail }, process.env.JWT_KEY, {
               expiresIn: "2h",
             });
-            res.cookie("entertainment_app_token", token, { sameSite: 'None', secure: true });
-            res
-              .status(200)
-              .json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully" });
-            // send token in user cookie
+            // res.cookie("entertainment_app_token", token, { sameSite: 'None', secure: true });
+            // res
+            //   .status(200)
+            //   .json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully" });
+            // // send token in user cookie
             const options = {
               expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
               httpOnly: true,
@@ -40,7 +40,7 @@ const Login = async (req, res) => {
               secure: true
             }
             // // { sameSite: 'None', secure: true }
-            // res.status(200).cookie("entertainment_app_token", token, options).json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully" });
+            res.status(200).cookie("entertainment_app_token", token, options).json({ statusCode: 200, data: {"entertainment_app_token": token }, msg: "User LoggedIn Successfully..." });
           } else {
             return res
               .status(201)
